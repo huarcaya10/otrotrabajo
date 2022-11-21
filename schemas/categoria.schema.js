@@ -1,11 +1,11 @@
-const Joi = require('joi');
+const Joi = require ('joi');
 
 const id = Joi.string()
               .uuid();
 const nombre = Joi.string()//.alphanum()
                   .min(3)
                   .max(30);
-const stock = Joi.number()
+const nrodescripcion = Joi.number()
                   .integer()
                   .min(10);
 

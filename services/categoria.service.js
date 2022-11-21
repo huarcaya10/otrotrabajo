@@ -15,7 +15,7 @@ class CategoriaService{
       this.categorias.push({
         id: crypto.randomUUID(),
         nombre: 'categoria' + index,
-        stock: 10 + Math.floor(Math.random()*190),
+        nrodescripcion: 10 + Math.floor(Math.random()*190),
         estaBloqueado: Math.random()<0.25
       });
     }
@@ -37,11 +37,11 @@ class CategoriaService{
     // });
   }
   async findOne(id){
-    const categoria = this.products.find((catego) => {
+    const categoria = this.categorias.find((catego) => {
       return catego.id === id;
     });
     if (!categoria){//!product
-      throw boom.notFound('product not found');
+      throw boom.notFound('categorianot found');
     }
     return categoria;
   }
